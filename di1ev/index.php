@@ -30,19 +30,20 @@
                 
                 <div class="divTituloApp col-lg-8 col-md-8 d-none d-md-block" style="color: #202419"> María Sánchez</div>
                 <div class="divLog col-lg-2 col-md-2 col-sm-2" id="divLog">
-                <img src="imagenes/icons8-accede-redondeado-derecho-60.png" alt="">
+                
                 <?php
-                    if (isset($_SESSION['usuario'])) {
-                        echo '<a href="logout.php" title="Log Out"';
-                        echo    '<img src="imagenes/icons8-cierre-de-sesión-redondeado-hacia-la-izquierda-60.png" alt="log out">';
-                        echo '<a/>';
-                    } else {
-                        echo '<a href="login.php" title="Log in"';
-                        echo    '<img src="imagenes/icons8-accede-redondeado-derecho-60.png" alt="log in">';
-                        echo '<a/>';
-                    }
-                    
-                ?>
+                        if(isset($_SESSION['nombre'])){
+                            echo '<a href="logout.php" title="Salir">';
+                            echo $_SESSION['nombre'];
+                            echo    '<img src="imagenes/log-out.png">';
+                            echo '</a>';
+                        }else{
+                            echo '<a href="login.php" title="Entrar">';
+                            echo    '<img src="imagenes/log-in.png">';
+                            echo '</a>';
+                        }
+                    ?>
+
 
                 </div>
             </div>
